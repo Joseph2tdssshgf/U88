@@ -1,77 +1,101 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Murrel Fish Seeds Store</title>
-  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Murrel Fish Seeds - Policies</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f3f8ff;
-      text-align: center;
-      padding: 50px;
+      font-family: "Segoe UI", sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
     }
-    .card {
-      display: inline-block;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-      width: 280px;
-    }
-    img { width: 100%; border-radius: 10px; }
-    h2 { color: #333; }
-    button {
-      background: #007bff;
+    header {
+      background: #008CFF;
       color: white;
-      border: none;
-      border-radius: 8px;
-      padding: 12px 18px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 10px;
+      text-align: center;
+      padding: 20px 0;
     }
-    button:hover { background: #0056b3; }
+    section {
+      background: white;
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #008CFF;
+      border-bottom: 2px solid #008CFF;
+      padding-bottom: 5px;
+    }
+    p {
+      margin: 10px 0;
+    }
+    a {
+      color: #008CFF;
+      text-decoration: none;
+    }
+    footer {
+      text-align: center;
+      background: #008CFF;
+      color: white;
+      padding: 10px;
+    }
   </style>
 </head>
 <body>
 
-  <h1>🐟 Murrel Fish Seeds Store</h1>
+  <header>
+    <h1>Murrel Fish Seeds Online Store Policies</h1>
+    <p>Transparency | Trust | Timely Delivery</p>
+  </header>
 
-  <div class="card">
-    <img src="https://i.imgur.com/GqT5WnZ.jpeg" alt="Murrel Seeds">
-    <h2>Murrel Fish Seeds Pack</h2>
-    <p>1000 Seeds – ₹500</p>
-    <button id="buyNow">Buy Now</button>
-  </div>
+  <!-- Contact Us Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>If you have any queries regarding your orders, payments, or our services, please reach out to us:</p>
+    <p><strong>Business Name:</strong> Murrel Fish Seeds</p>
+    <p><strong>Owner:</strong> Joseph Yesebu</p>
+    <p><strong>Phone:</strong> <a href="tel:+919505329034">+91 9505329034</a></p>
+    <p><strong>Email:</strong> <a href="mailto:yesebubirudugadda37@gmail.com">yesebubirudugadda37@gmail.com</a></p>
+    <p><strong>Address:</strong> Kaikaluru, Andhra Pradesh, India</p>
+    <p>We aim to reply within 24 hours of receiving your message.</p>
+  </section>
 
-  <script>
-    document.getElementById('buyNow').onclick = function(e){
-      var options = {
-        "key": "rzp_test_yourkeyid", // 👉 Replace with your Razorpay Key ID
-        "amount": 50000, // Amount in paise = ₹500
-        "currency": "INR",
-        "name": "Murrel Fish Seeds",
-        "description": "Pack of 1000 Murrel Fish Seeds",
-        "image": "https://i.imgur.com/GqT5WnZ.jpeg",
-        "handler": function (response){
-            alert("✅ Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
-        },
-        "prefill": {
-            "name": "Customer Name",
-            "email": "customer@example.com",
-            "contact": "9999999999"
-        },
-        "theme": {
-            "color": "#007bff"
-        }
-      };
-      var rzp1 = new Razorpay(options);
-      rzp1.open();
-      e.preventDefault();
-    }
-  </script>
+  <!-- Shipping Policy Section -->
+  <section id="shipping">
+    <h2>Shipping Policy</h2>
+    <p>We deliver Murrel Fish Seeds safely and promptly within Andhra Pradesh and nearby states.</p>
+    <ul>
+      <li>Orders are processed within <strong>1-2 business days</strong>.</li>
+      <li>Delivery time may vary from <strong>2-5 days</strong> depending on location.</li>
+      <li>We ensure safe packaging and temperature maintenance during transport.</li>
+      <li>Shipping charges may apply based on distance and quantity.</li>
+      <li>In case of delays, we will inform customers via call or SMS.</li>
+    </ul>
+  </section>
+
+  <!-- Terms and Conditions Section -->
+  <section id="terms">
+    <h2>Terms and Conditions</h2>
+    <p>By purchasing from <strong>Murrel Fish Seeds</strong>, you agree to the following terms:</p>
+    <ul>
+      <li>All payments must be made through the official Razorpay link or our authorized website.</li>
+      <li>Orders once confirmed cannot be cancelled after shipment.</li>
+      <li>Fish seed health and survival depend on proper handling post-delivery; we are not responsible for losses after handover.</li>
+      <li>In rare cases of quality issues, replacement will be considered upon verification.</li>
+      <li>We reserve the right to modify prices and terms at any time without prior notice.</li>
+    </ul>
+    <p>Thank you for trusting <strong>Murrel Fish Seeds</strong> for your aquaculture needs!</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Murrel Fish Seeds | All Rights Reserved</p>
+  </footer>
 
 </body>
 </html>
