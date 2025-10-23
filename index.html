@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Murrel Fish Seeds Store</title>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f8ff;
+      text-align: center;
+      padding: 50px;
+    }
+    .card {
+      display: inline-block;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      width: 280px;
+    }
+    img { width: 100%; border-radius: 10px; }
+    h2 { color: #333; }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 18px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+
+  <h1>🐟 Murrel Fish Seeds Store</h1>
+
+  <div class="card">
+    <img src="https://i.imgur.com/GqT5WnZ.jpeg" alt="Murrel Seeds">
+    <h2>Murrel Fish Seeds Pack</h2>
+    <p>1000 Seeds – ₹500</p>
+    <button id="buyNow">Buy Now</button>
+  </div>
+
+  <script>
+    document.getElementById('buyNow').onclick = function(e){
+      var options = {
+        "key": "rzp_test_yourkeyid", // 👉 Replace with your Razorpay Key ID
+        "amount": 50000, // Amount in paise = ₹500
+        "currency": "INR",
+        "name": "Murrel Fish Seeds",
+        "description": "Pack of 1000 Murrel Fish Seeds",
+        "image": "https://i.imgur.com/GqT5WnZ.jpeg",
+        "handler": function (response){
+            alert("✅ Payment Successful!\nPayment ID: " + response.razorpay_payment_id);
+        },
+        "prefill": {
+            "name": "Customer Name",
+            "email": "customer@example.com",
+            "contact": "9999999999"
+        },
+        "theme": {
+            "color": "#007bff"
+        }
+      };
+      var rzp1 = new Razorpay(options);
+      rzp1.open();
+      e.preventDefault();
+    }
+  </script>
+
+</body>
+</html>
